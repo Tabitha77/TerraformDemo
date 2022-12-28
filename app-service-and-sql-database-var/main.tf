@@ -1,3 +1,7 @@
+provider "azurerm" {
+  features {}
+}
+
 resource "azurerm_resource_group" "RG-Terraform" {
   name     = "rg_eastus_89125_1_1672239737332"
   location = "East US 2"

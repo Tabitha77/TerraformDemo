@@ -18,7 +18,7 @@ resource "azurerm_resource_group" "resource_group_terraform" {
   location = "East US 2"
 }
 
-resource "azurerm_app_service_plan" "app_service_plan_terraform" {
+resource "azurerm_service_plan" "app_service_plan_terraform" {
   name                = "terraform-appserviceplan"
   location            = azurerm_resource_group.resource_group_terraform.location
   resource_group_name = azurerm_resource_group.resource_group_terraform.name

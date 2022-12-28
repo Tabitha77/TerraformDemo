@@ -1,10 +1,10 @@
 variable "resource-group-name" {
-  default     = "terraform-resource-group"
+  default     = "rg_eastus_89125_1_1672239737332"
   description = "The prefix used for all resources in this example"
 }
 
 variable "location" {
-  default     = "West Europe"
+  default     = "East US 2"
   description = "The Azure location where all resources in this example should be created"
 }
 

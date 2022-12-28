@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "RG-Terraform" {
-  name     = "terraform-resource-group"
-  location = "West Europe"
+  name     = "rg_eastus_89125_1_1672239737332"
+  location = "East US 2"
 }
 
 resource "azurerm_app_service_plan" "ASP-TerraForm" {
@@ -41,8 +41,8 @@ resource "azurerm_sql_server" "test" {
   resource_group_name          = azurerm_resource_group.RG-Terraform.name
   location                     = azurerm_resource_group.RG-Terraform.location
   version                      = "12.0"
-  administrator_login          = "houssem"
-  administrator_login_password = "4-v3ry-53cr37-p455w0rd"
+  administrator_login          = "azureadmin"
+  administrator_login_password = "Accenture@123"
 }
 
 resource "azurerm_sql_database" "test" {

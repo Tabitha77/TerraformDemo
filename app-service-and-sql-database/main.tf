@@ -1,6 +1,6 @@
 resource "azurerm_resource_group" "RG-Terraform" {
-  name     = "terraform-resource-group"
-  location = "West Europe"
+  name     = "rg_eastus_89125_1_1672239737332"
+  location = "East US 2"
 }
 
 resource "azurerm_app_service_plan" "ASP-TerraForm" {

@@ -3,7 +3,7 @@ resource "azurerm_resource_group" "RG-Terraform" {
   location = "East US 2"
 }
 
-resource "azurerm_app_service_plan" "ASP-TerraForm" {
+resource "azurerm_service_plan" "ASP-TerraForm" {
   name                = "terraform-appserviceplan"
   location            = azurerm_resource_group.RG-Terraform.location
   resource_group_name = azurerm_resource_group.RG-Terraform.name
@@ -13,21 +13,18 @@ resource "azurerm_app_service_plan" "ASP-TerraForm" {
     size = "S1"
   }
 }
-
-resource "azurerm_app_service" "AS-Terraform" {
+  
+  resource "azurerm_linux_web_app" "AS-Terraform" {
   name                = "app-service-terraform"
-  location            = azurerm_resource_group.RG-Terraform.location
   resource_group_name = azurerm_resource_group.RG-Terraform.name
-  app_service_plan_id = azurerm_app_service_plan.ASP-TerraForm.id
+  location            = azurerm_resource_group.RG-Terraform.location
+  service_plan_id     = azurerm_app_service_plan.ASP-TerraForm.id
 
   site_config {
-    dotnet_framework_version = "v4.0"
-    scm_type                 = "LocalGit"
+   dotnet_framework_version = "v4.0"
+   scm_type                 = "LocalGit"
   }
-
-  app_settings = {
-    "SOME_KEY" = "some-value"
-  }
+}
 
   connection_string {
     name  = "Database"

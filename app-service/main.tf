@@ -5,8 +5,8 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "resource_group_terraform" {
-  name     = "terraform_resource_group"
-  location = "West Europe"
+  name     = "rg_eastus_89125_1_1672239737332"
+  location = "East US 2"
 }
 
 resource "azurerm_app_service_plan" "app_service_plan_terraform" {

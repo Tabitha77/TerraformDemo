@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  subscription: "Pay-As-You-Go"
+  subscription: Pay-As-You-Go
   resourceGroup: rg_eastus_89125_1_16739400851525
   storageAccount: terraformtabitha
   container: tfstate
